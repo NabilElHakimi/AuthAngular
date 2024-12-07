@@ -1,5 +1,5 @@
 #bg {
-  background-image:linear-gradient(rgba(0,0,0,0.6) ,  rgba(0,0,0,0.4) ), url('/assets/bg1.jpg')  ; /* Correct path to the image */
+  background-image:linear-gradient(rgba(0,0,0,0.6) ,  rgba(0,0,0,0.5) ), url('/assets/bg1.jpg')  ; /* Correct path to the image */
   background-size: cover; /* Ensure the image covers the entire div */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center center; /* Center the image */

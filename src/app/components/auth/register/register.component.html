@@ -19,7 +19,7 @@
 
 
 
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="max-w-md mx-auto shadow-lg p-10 bg-white">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="max-w-md mx-auto shadow-lg rounded p-10 bg-white">
     <h1 class="text-center text-black uppercase mb-5">Register</h1>
 
     <!-- Username -->
@@ -114,7 +114,7 @@
     </div>
 
     <!-- Submit Button -->
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
     <p class="mt-4 text-sm text-gray-600 text-center">
       Have an account?
       <a [routerLink]="['/login']" class="text-blue-600 hover:underline">Login here</a>
