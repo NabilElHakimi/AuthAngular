@@ -33,8 +33,8 @@ export class LoginComponent {
           localStorage.setItem('authToken', response.token); // Save token in localStorage
           this.successMessage = 'Login successful! Redirecting...';
           setTimeout(() => {
-            this.router.navigate(['/dashboard']); // Replace '/dashboard' with your desired route
-          }, 2000); // Redirect after 2 seconds
+            this.router.navigate(['/home']);
+          }); 
         },
         error: (error) => {
           console.error('Login failed:', error);
