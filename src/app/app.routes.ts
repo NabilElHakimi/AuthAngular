@@ -1,8 +1,8 @@
-import { HomePageComponent } from './home/home-page/home-page.component';
 import { Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 import { AuthGuard } from '../auth.guard';
+import { HomePageComponent } from './components/home/home-page/home-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },

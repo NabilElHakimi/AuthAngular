@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,5 +9,12 @@ import { RouterModule } from '@angular/router';
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
+
+  constructor(private router: Router) {}
+
+  onLogout(): void {
+    localStorage.removeItem('authToken');
+    this.router.navigate(['/login']);
+  }
 
 }
