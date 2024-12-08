@@ -1,0 +1,44 @@
+<div class="flex flex-col items-center py-10 gap-4">
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="text-red-500 text-center">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Loader -->
+  <div *ngIf="isLoading" class="text-center">
+    <p>Loading...</p>
+  </div>
+
+  <!-- Competition Cards -->
+  <ng-container *ngIf="!isLoading && competitions.length > 0; else noCompetitions">
+    <app-compitition-card
+      *ngFor="let competition of competitions"
+      [competition]="competition"
+      class="w-[95%] md:min-w-[80%] flex justify-center"
+    ></app-compitition-card>
+  </ng-container>
+
+  <!-- No Competitions Template -->
+  <ng-template #noCompetitions>
+    <p class="text-center text-gray-500 mt-5">No competitions available at the moment.</p>
+  </ng-template>
+
+  <!-- Pagination -->
+  <div class="flex justify-between items-center w-full max-w-lg mt-4">
+    <button
+      (click)="onPageChange('prev')"
+      [disabled]="page === 0"
+      class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 disabled:bg-gray-200"
+    >
+      Previous
+    </button>
+    <span>Page {{ page + 1 }} of {{ totalPages }}</span>
+    <button
+      (click)="onPageChange('next')"
+      [disabled]="page >= totalPages - 1"
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-blue-300"
+    >
+      Next
+    </button>
+  </div>
+</div>

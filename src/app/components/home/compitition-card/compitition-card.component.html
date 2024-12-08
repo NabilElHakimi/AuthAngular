@@ -1,1 +1,42 @@
-<p>compitition-card works!</p>
+<a
+  [routerLink]="['/competition', competition?.id]"
+  class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-lg md:flex-row md:h-60 hover:shadow-xl  transition-all duration-300 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 w-full max-w-4xl overflow-hidden"
+>
+  <!-- Competition Image -->
+  <img
+    class="object-cover w-full h-48 md:w-60 md:h-full md:rounded-l-lg"
+    src="https://imgs.search.brave.com/qQiXJlUrSgJxLePI0wocewHuX3tWYkhXMocA3Wd_vpk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTAy/MjgzODc4L3Bob3Rv/L3J1bm5lci1jcm9z/c2luZy1maW5pc2hp/bmctbGluZS1vbi10/cmFjay5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9dnN3NUdO/RVpWSE1jY2NFdFNq/dS0yWW5BamRRR1J0/eXFLMWQ2X1A1OWRa/RT0"
+    alt="{{ competition?.location || 'Competition Location' }}"
+  >
+
+  <!-- Competition Details -->
+  <div class="flex flex-col justify-between p-6 leading-normal md:w-full">
+    <!-- Location -->
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {{ competition?.location || 'Competition Location' }}
+    </h5>
+
+    <!-- Date -->
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <strong>Date:</strong> {{ competition?.date ? (competition.date | date: 'longDate') : 'No date available.' }}
+    </p>
+
+    <!-- Species Type -->
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <strong>Species Type:</strong> {{ competition?.speciesType || 'Unknown' }}
+    </p>
+
+    <!-- Participants -->
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <strong>Participants:</strong> {{ competition?.minParticipants || 0 }} - {{ competition?.maxParticipants || 'No Limit' }}
+    </p>
+
+    <!-- Registration Status -->
+    <p class="font-medium text-green-500 dark:text-green-400" *ngIf="competition?.openRegistration">
+      Registration: Open
+    </p>
+    <p class="font-medium text-red-500 dark:text-red-400" *ngIf="!competition?.openRegistration">
+      Registration: Closed
+    </p>
+  </div>
+</a>

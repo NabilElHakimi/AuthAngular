@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body class="flex justify-between flex-col h-[100vh] bg-gray-100">
+<body class="flex justify-between flex-col min-h-screen bg-gray-100">
   <header class="fixed">
     <ng-container *ngIf="router.url !== '/login' && router.url !== '/register'">
       <app-header></app-header>
@@ -13,8 +13,9 @@
   </header>
 
   <main  [class.my-16]="router.url !== '/login' && router.url !== '/register'">
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
   </main>
+
   <footer>
     <ng-container *ngIf="router.url !== '/login' && router.url !== '/register'">
       <app-footer></app-footer>
